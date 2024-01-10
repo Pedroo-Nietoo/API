@@ -1,4 +1,4 @@
-package br.com.pedroonietoo.taskManagement.user.model;
+package br.com.pedroonietoo.taskManagement.models;
 
 import jakarta.persistence.*;
 import org.hibernate.annotations.CreationTimestamp;

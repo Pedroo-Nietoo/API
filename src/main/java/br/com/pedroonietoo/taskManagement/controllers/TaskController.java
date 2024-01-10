@@ -1,11 +1,11 @@
-package br.com.pedroonietoo.taskManagement.task.controller;
+package br.com.pedroonietoo.taskManagement.controllers;
 
 import br.com.pedroonietoo.taskManagement.TaskManagementApiApplication;
 import br.com.pedroonietoo.taskManagement.errors.ErrorResponse;
-import br.com.pedroonietoo.taskManagement.task.dto.TaskDto;
-import br.com.pedroonietoo.taskManagement.task.model.TaskModel;
-import br.com.pedroonietoo.taskManagement.task.repository.TaskRepository;
-import br.com.pedroonietoo.taskManagement.user.repository.UserRepository;
+import br.com.pedroonietoo.taskManagement.dtos.TaskDto;
+import br.com.pedroonietoo.taskManagement.models.TaskModel;
+import br.com.pedroonietoo.taskManagement.repositories.TaskRepository;
+import br.com.pedroonietoo.taskManagement.repositories.UserRepository;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;

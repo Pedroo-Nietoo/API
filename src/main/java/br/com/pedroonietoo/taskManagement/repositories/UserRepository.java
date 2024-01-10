@@ -1,6 +1,6 @@
-package br.com.pedroonietoo.taskManagement.user.repository;
+package br.com.pedroonietoo.taskManagement.repositories;
 
-import br.com.pedroonietoo.taskManagement.user.model.UserModel;
+import br.com.pedroonietoo.taskManagement.models.UserModel;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,4 +1,4 @@
-package br.com.pedroonietoo.taskManagement.task.dto;
+package br.com.pedroonietoo.taskManagement.dtos;
 
 import jakarta.validation.constraints.Future;
 import jakarta.validation.constraints.NotBlank;

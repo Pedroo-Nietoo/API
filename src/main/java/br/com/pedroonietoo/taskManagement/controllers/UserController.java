@@ -1,11 +1,11 @@
-package br.com.pedroonietoo.taskManagement.user.controller;
+package br.com.pedroonietoo.taskManagement.controllers;
 
 import at.favre.lib.crypto.bcrypt.BCrypt;
 import br.com.pedroonietoo.taskManagement.TaskManagementApiApplication;
 import br.com.pedroonietoo.taskManagement.errors.ErrorResponse;
-import br.com.pedroonietoo.taskManagement.user.dto.UserDto;
-import br.com.pedroonietoo.taskManagement.user.model.UserModel;
-import br.com.pedroonietoo.taskManagement.user.repository.UserRepository;
+import br.com.pedroonietoo.taskManagement.dtos.UserDto;
+import br.com.pedroonietoo.taskManagement.models.UserModel;
+import br.com.pedroonietoo.taskManagement.repositories.UserRepository;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;

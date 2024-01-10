@@ -1,6 +1,6 @@
-package br.com.pedroonietoo.taskManagement.task.repository;
+package br.com.pedroonietoo.taskManagement.repositories;
 
-import br.com.pedroonietoo.taskManagement.task.model.TaskModel;
+import br.com.pedroonietoo.taskManagement.models.TaskModel;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
