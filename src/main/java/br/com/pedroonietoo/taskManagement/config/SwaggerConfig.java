@@ -12,7 +12,7 @@ import io.swagger.v3.oas.models.info.License;
 import io.swagger.v3.oas.models.servers.Server;
 
 @Configuration
-public class OpenAPIConfig {
+public class SwaggerConfig {
 
     @Value("${pedronieto.openapi.dev-url}")
     private String devUrl;

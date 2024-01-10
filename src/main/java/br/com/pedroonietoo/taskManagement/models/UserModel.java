@@ -1,55 +1,84 @@
 package br.com.pedroonietoo.taskManagement.models;
 
-import jakarta.persistence.*;
-import org.hibernate.annotations.CreationTimestamp;
-
-import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.Collection;
+import java.util.List;
 import java.util.UUID;
 
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
+@ToString
 @Table(name = "users")
-public class UserModel implements Serializable {
-    private static final long serialVersionUID = 1L;
+public class UserModel implements UserDetails {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID id;
-    private String username;
-    private String email;
-    private String password;
-    @CreationTimestamp
-    private LocalDateTime createdAt;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    UUID id;
 
-    public UUID getId() {
-        return id;
+    String username;
+
+    @Column(unique = true)
+    String email;
+
+    String password;
+
+    @Enumerated(EnumType.STRING)
+    Role role;
+
+    LocalDateTime createdAt;
+
+    LocalDateTime updatedAt;
+
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return List.of(new SimpleGrantedAuthority(role.name()));
     }
 
-    public void setId(UUID id) {
-        this.id = id;
-    }
-
+    @Override
     public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getEmail() {
+        // our "username" for security is the email field
         return email;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    @Override
+    public boolean isAccountNonExpired() {
+        return true;
     }
 
-    public String getPassword() {
-        return password;
+    @Override
+    public boolean isAccountNonLocked() {
+        return true;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return true;
     }
+
+    @Override
+    public boolean isEnabled() {
+        return true;
+    }
+
 }
